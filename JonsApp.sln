@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JonsApp.iOS", "JonsApp\Jons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegularUITestProj", "RegularUITestProj\RegularUITestProj.csproj", "{3CA7A8CF-4C83-438F-8BC3-F8A29656E7CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppiumNUnitTestProj", "AppiumNUnitTestProj\AppiumNUnitTestProj.csproj", "{1F63A354-0784-4C0E-996F-805E010F624E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,25 +103,5 @@ Global
 		{3CA7A8CF-4C83-438F-8BC3-F8A29656E7CD}.AndroidTests|Any CPU.Build.0 = Debug|Any CPU
 		{3CA7A8CF-4C83-438F-8BC3-F8A29656E7CD}.iOSTests|Any CPU.ActiveCfg = Debug|Any CPU
 		{3CA7A8CF-4C83-438F-8BC3-F8A29656E7CD}.iOSTests|Any CPU.Build.0 = Debug|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.Release|iPhone.Build.0 = Release|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.Ad-Hoc|iPhone.ActiveCfg = AndroidTests|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.Ad-Hoc|iPhone.Build.0 = AndroidTests|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.AppStore|iPhone.ActiveCfg = AndroidTests|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.AppStore|iPhone.Build.0 = AndroidTests|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.AndroidTests|Any CPU.ActiveCfg = AndroidTests|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.AndroidTests|Any CPU.Build.0 = AndroidTests|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.iOSTests|Any CPU.ActiveCfg = iOSTests|Any CPU
-		{1F63A354-0784-4C0E-996F-805E010F624E}.iOSTests|Any CPU.Build.0 = iOSTests|Any CPU
 	EndGlobalSection
 EndGlobal
