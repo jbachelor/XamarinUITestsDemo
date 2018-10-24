@@ -24,8 +24,8 @@ namespace JonsApp.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App(new iOSInitializer()));
 
-#if DEBUG
-                Xamarin.Calabash.Start();
+#if ENABLE_TEST_CLOUD
+            Xamarin.Calabash.Start();
 #endif
 
             return base.FinishedLaunching(app, options);
