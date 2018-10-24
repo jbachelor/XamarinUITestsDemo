@@ -8,15 +8,18 @@ namespace RegularUITestProj
 {
     public class AppInitializer
     {
+        public static int testNumber = 0;
+        public static IApp app = null;
+
         public static IApp StartApp(Platform platform)
         {
-            IApp app = null;
             int maxAttempts = 5;
             bool appDidLaunch = false;
+            testNumber++;
 
             for (int i = 0; i < maxAttempts; i++)
             {
-                Console.WriteLine($"**** {nameof(AppInitializer)}.{nameof(StartApp)}:  Attempt {i + 1}");
+                Console.WriteLine($"**** {nameof(AppInitializer)}.{nameof(StartApp)}:  Attempt {i + 1} for test {testNumber} on {platform}.");
                 try
                 {
                     app = TryToLaunchAppOnPlatform(platform);
@@ -39,12 +42,11 @@ namespace RegularUITestProj
 
         private static IApp TryToLaunchAppOnPlatform(Platform platform)
         {
-            IApp app;
             if (platform == Platform.Android)
             {
                 app = ConfigureApp
                     .Android
-                    // TODO: Update this path to point to your Android app and uncomment the
+                    // Update this path to point to your Android app and uncomment the
                     // code if the app is not included in the solution.
                     //.ApkFile ("../../../Droid/bin/Debug/xamarinforms.apk")
                     .StartApp();
@@ -53,7 +55,7 @@ namespace RegularUITestProj
             {
                 app = ConfigureApp
                 .iOS
-                // TODO: Update this path to point to your iOS app and uncomment the
+                // Update this path to point to your iOS app and uncomment the
                 // code if the app is not included in the solution.
                 //.AppBundle ("../../../iOS/bin/iPhoneSimulator/Debug/XamarinForms.iOS.app")
                 .StartApp();

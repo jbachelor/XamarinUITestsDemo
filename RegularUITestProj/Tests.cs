@@ -11,7 +11,6 @@ namespace RegularUITestProj
     [TestFixture(Platform.iOS)]
     public class Tests
     {
-        IApp app;
         Platform platform;
 
         public Tests(Platform platform)
@@ -22,19 +21,55 @@ namespace RegularUITestProj
         [SetUp]
         public void BeforeEachTest()
         {
-            app = AppInitializer.StartApp(platform);
+            Steps.GivenIHaveLaunchedLuxor(platform);
+        }
+
+        [TearDown]
+        public void AfterEachTest()
+        {
+
+        }
+
+        [Test]
+        public void AppLaunchesAndShowsMainPage()
+        {
+            AppInitializer.app.WaitForElement("mainPage");
         }
 
         [Test]
         public void AppLaunchesAndShowsWelcomeLabel()
         {
-            app.WaitForElement("WelcomeLabel");
+            AppInitializer.app.WaitForElement("WelcomeLabel");
         }
 
         [Test]
         public void AppLaunchesAndShowsAlertButton()
         {
-            app.WaitForElement("AlertButton");
+            AppInitializer.app.WaitForElement("AlertButton");
+        }
+
+        [Test]
+        public void TappingShowAlertShowsAlertWithTitle()
+        {
+            AppInitializer.app.WaitForElement("AlertButton");
+            AppInitializer.app.Tap("AlertButton");
+            AppInitializer.app.WaitForElement("Alert!");
+        }
+
+        [Test]
+        public void TappingShowAlertShowsAlertWithMessage()
+        {
+            AppInitializer.app.WaitForElement("AlertButton");
+            AppInitializer.app.Tap("AlertButton");
+            AppInitializer.app.WaitForElement("You've tapped the show alert button.");
+        }
+
+        [Test]
+        public void TappingShowAlertShowsAlertWithButton()
+        {
+            AppInitializer.app.WaitForElement("AlertButton");
+            AppInitializer.app.Tap("AlertButton");
+            AppInitializer.app.WaitForElement("ok");
         }
     }
 }
