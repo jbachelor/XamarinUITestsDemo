@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+    <Target
+        Name="__EnsureConfigsExist__">
+        <Copy
+            SourceFiles="Templates\android.config.json"
+            DestinationFiles="android.config.json"
+            Condition=" !Exists('android.config.json') " />
+        <Copy
+            SourceFiles="Templates\ios.config.json"
+            DestinationFiles="ios.config.json"
+            Condition=" !Exists('ios.config.json') " />
+    </Target>
+    <Target
+        Name="CopyAppiumConfiguration"
+        AfterTargets="CopyFilesToOutputDirectory">
+        <PropertyGroup>
+            <AppiumConfigurationFile
+                Condition=" '$(UITestPlatform)' == 'Android' ">android.config.json</AppiumConfigurationFile>
+            <AppiumConfigurationFile
+                Condition=" '$(UITestPlatform)' != 'Android' ">ios.config.json</AppiumConfigurationFile>
+        </PropertyGroup>
+        <Copy
+            SourceFiles="$(AppiumConfigurationFile)"
+            DestinationFiles="$(OutputPath)config.json" />
+    </Target>
+</Project>

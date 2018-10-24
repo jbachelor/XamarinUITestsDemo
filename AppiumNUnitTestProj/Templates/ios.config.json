@@ -1,0 +1,14 @@
+﻿{
+  "Platform": "iOS",
+  "AppiumServer": "http://127.0.0.1:4723/wd/hub",
+  // https://appium.io/docs/en/writing-running-appium/caps/
+  "Capabilities": {
+    "platformName": "iOS",
+    "deviceName": "iPhone 7",
+    "platformVersion": "11.0",
+    "automationName": "Appium",
+    "app": "$IPA_PATH$",
+    // iOS Bundle ID: com.contoso.awesomeapp
+    "bundleID": "$BUNDLE_ID$"
+  }
+}
