@@ -33,43 +33,43 @@ namespace RegularUITestProj
         [Test]
         public void AppLaunchesAndShowsMainPage()
         {
-            AppInitializer.app.WaitForElement("mainPage");
+            Steps.ThenIShouldSeeTheElement("mainPage");
         }
 
         [Test]
         public void AppLaunchesAndShowsWelcomeLabel()
         {
-            AppInitializer.app.WaitForElement("WelcomeLabel");
+            Steps.ThenIShouldSeeTheElement("WelcomeLabel");
         }
 
         [Test]
         public void AppLaunchesAndShowsAlertButton()
         {
-            AppInitializer.app.WaitForElement("AlertButton");
+            Steps.ThenIShouldSeeTheElement("AlertButton");
         }
 
         [Test]
         public void TappingShowAlertShowsAlertWithTitle()
         {
-            AppInitializer.app.WaitForElement("AlertButton");
-            AppInitializer.app.Tap("AlertButton");
-            AppInitializer.app.WaitForElement("Alert!");
+            Steps.AndIWaitForTheElement("AlertButton");
+            Steps.AndITapTheElement("AlertButton");
+            Steps.ThenIShouldSeeTheElement("Alert!");
         }
 
         [Test]
         public void TappingShowAlertShowsAlertWithMessage()
         {
-            AppInitializer.app.WaitForElement("AlertButton");
-            AppInitializer.app.Tap("AlertButton");
-            AppInitializer.app.WaitForElement("You've tapped the show alert button.");
+            Steps.AndIWaitForTheElement("AlertButton");
+            Steps.AndITapTheElement("AlertButton");
+            Steps.ThenIShouldSeeTheElement("You've tapped the show alert button.");
         }
 
         [Test]
         public void TappingShowAlertShowsAlertWithButton()
         {
-            AppInitializer.app.WaitForElement("AlertButton");
-            AppInitializer.app.Tap("AlertButton");
-            AppInitializer.app.WaitForElement("ok");
+            Steps.AndIWaitForTheElement("AlertButton");
+            Steps.AndITapTheElement("AlertButton");
+            Steps.ThenIShouldSeeTheElement("ok");
         }
     }
 }

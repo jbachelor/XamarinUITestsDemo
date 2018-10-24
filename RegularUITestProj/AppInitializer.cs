@@ -19,7 +19,7 @@ namespace RegularUITestProj
 
             for (int i = 0; i < maxAttempts; i++)
             {
-                Console.WriteLine($"**** {nameof(AppInitializer)}.{nameof(StartApp)}:  Attempt {i + 1} for test {testNumber} on {platform}.");
+                Console.WriteLine($"**** {nameof(AppInitializer)}.{nameof(StartApp)}:  Attempt {i + 1} for test {testNumber} ({platform}).");
                 try
                 {
                     app = TryToLaunchAppOnPlatform(platform);
@@ -42,6 +42,18 @@ namespace RegularUITestProj
 
         private static IApp TryToLaunchAppOnPlatform(Platform platform)
         {
+            // If the iOS or Android app being tested is included in the solution 
+            // then open the Unit Tests window, right click Test Apps, select Add App Project
+            // and select the app projects that should be tested.
+            //
+            // The iOS project should have the Xamarin.TestCloud.Agent NuGet package
+            // installed. To start the Test Cloud Agent the following code should be
+            // added to the FinishedLaunching method of the AppDelegate:
+            //
+            //    #if ENABLE_TEST_CLOUD
+            //    Xamarin.Calabash.Start();
+            //    #endif
+
             if (platform == Platform.Android)
             {
                 app = ConfigureApp
